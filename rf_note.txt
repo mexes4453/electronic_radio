@@ -1,0 +1,95 @@
+Antenna
+-------
+
+wave (radiation) propagates in all directions and normally follows a sine curve.
+
+one complete cycle of the wave is defined as one wave length.
+
+The wavelength of the radiation can be related to the antenna that produces it.
+
+A simple dipole is an antenna that accomodates half the wavelength of a radiation wave.
+
+when such antenna is fed with a signal, a concentration of electrons is formed around the antenna.
+
+these electrons migrates to one end of the antenna, then fills up the entire antenna as they
+migrate to the form a maximum concentration on the other end. 
+
+This process repeats with the frequency of the signal, hence producing a fluctuating magnetic field.
+The magnetic field reverses its direction as the electrons migrates from one end of the antenna to 
+the other.
+
+The magnectic field strength is maximum when the electrons are evenly distributed along the antenna as they 
+migrate from one end to the another. This maximum field strength is proportional to amplitude of the wave.
+This magnectic field is also called the H-field.
+
+
+
+
+
+Frequency 
++ low frequency travels farther (ex. Bass sound )
++ high frequency means more speed.
++ higher frequency -> smaller wavelength
++ Small frequency -> higher wavelength
+
+
+
+Amplitude
++ Same as the power of the wave measured in milliwatts(mW) or decibel (dBm - decibel to milliwatt)
++ 0dBm = 1mW
++------------------------------------------------------------------------------------------------+
+| dbm | -30   | -20   | -10   | -12    | -9    | -6    | -3    | 0 | 3 | 6 | 9 | 10 | 20  | 30   |
+|-----+-------+---------------+--------+-------+-------+-------+---+---+---+---+----+-----+------|
+| mW  | 0.001 | 0.010 | 0.100 | 0.0625 | 0.125 | 0.250 | 0.500 | 1 | 2 | 4 | 8 | 10 | 100 | 1000 |
++------------------------------------------------------------------------------------------------+
++ Rules of 3 and 10
+-------------------
++ -3  : 1/2 (half) the original power
++ +3  : 2x     the original power
++ -10 : 1/10th the original power
++ +10 : 10x    the original power
+
+
+Phase
+
+Bandwidth
+------
+Topics
+------
+Radio
+Antenna
+Filter
+Amplifier
+Capacitor
+Induktor
+Transistors
+
+----------
+COMPONENTS
+----------
++ Channels
++ Behaviour -> Scattering, Diffraction, *Reflection, Refraction, *Absorption
++ Measurement -> amplitude, dbm, mW, RSSI, Noise Floor, SNR
++ Interference
++ Analysis
+
+
+
+
+------------
+APPLICATIONS
+------------
+https://www.falstad.com/circuit/circuitjs.html       : Simulate the electrical circuits build up for analysis.
+
+
+-----
+BOOKS
+-----
+CWNA (admin)    - David Coman
+CWAP (analysis) - David Coman
+CWDP (design)   - David Coman
+CWSP (security) - David Coman
+CWNE (expert)   - David Coman
+
+
+https://www.youtube.com/watch?v=XZhAg4oJ-WE&list=PLpdKaoNaDwSJkEMY21w2N2SO12CkGoY71&index=5
