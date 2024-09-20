@@ -37,17 +37,17 @@ P = VI = (1.5V)(0.1A) = 0.15W
 P = VI = IR * I = V * V/R
 
 
-+------------+
-| RESISTANCE |
-+------------+
++-----------------------+
+| RESISTANCE - ELECTRIC |
++-----------------------+
 The ratio of applied voltage to the resultant current flow 
 1. R = V/I
    1 ohm = 1V/1A
 
 2. R = pL/A (resistivity x wire Length / wire cross section area)
-   p = RA/L (resitivity)
+   p = RA/L (resitivity) (ohmM)
 
-3. G = 1/p  (conductivity -> The inverse of resitivity) 
+3. G = 1/p  (conductivity -> The inverse of resitivity) (1/ohmM)
    V = IR = I * pL/A = I * L/(GA)
 
 4. Resistivity is temperature dependent and varies based on material
@@ -62,6 +62,21 @@ The resisitivity of most metals increases with temperature because
 thermal energy causes atomic vibration which reduces the drift
 velocity of conducting electrons.
 
++----------------------+
+| RESISTANCE - THERMAL |
++----------------------+
+Thermal Resistance and conductivity
+Tr = L/(kA)  = yL/A 
+Ph = dQ/dt = k(A/L)dT = (A/L * 1/y)dT = dT/Tr
+
+Tr : Thermal Resistance
+L  : length
+A  : surface area 
+y  : thermal resistivity  (mC/W)
+k  : thermal conductivity (W/mC)
+dQ : heat difference over time
+dT : Temperature difference (C)
+Ph : Power as heat (W)
 
 
 
