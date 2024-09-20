@@ -1,0 +1,69 @@
+electric current : Total charge passing through cross section area per unit time.
+                 : I = dQ/dt = coulumb/sec = ampere
+                 : unit of current is Coulombs per second (ampere)
+                 : 1A = 1C/s
+/**
+ * @brief electric current
+ * @details
+ * Total charge passing through cross section area per unit time.
+ * I = dQ/dt = coulumb/sec = ampere
+ * unit of current is Coulombs per second (ampere)
+ * 1A = 1C/1s
+ * ----------
+ * 1 Charge  = 1.602e-19 Coulombs (C)
+ * 1 Coulomb = 1/(1.602e-19) = 6.24e18 electrons
+ * 1A = 1C/1s = 6.24e18 electrons/s
+ * 
+ */
+
++------+
+| Volt |
++------+
+It is an electromotive force EMF between two points required to cause one 
+ampere of current to do one joule (measure of energy) of work in flowing 
+between the points. Voltage can also be expressed as joules per coulomb.
+Vab = Uab/q = (Ub-Ua)/dq = (joules/coulomb) = energy
+1v = 1j/1c
+
+
++-------+
+| POWER |
++-------+
+This represents how much energy per second goes into powering a ciruit.
+power, p = dW/dt. (W = v*q)
+p = dW/dt = v * dq/dt (dq/dt = I)
+P = VI. (j/s = Watt = VA)
+P = VI = (1.5V)(0.1A) = 0.15W
+P = VI = IR * I = V * V/R
+
+
++------------+
+| RESISTANCE |
++------------+
+The ratio of applied voltage to the resultant current flow 
+1. R = V/I
+   1 ohm = 1V/1A
+
+2. R = pL/A (resistivity x wire Length / wire cross section area)
+   p = RA/L (resitivity)
+
+3. G = 1/p  (conductivity -> The inverse of resitivity) 
+   V = IR = I * pL/A = I * L/(GA)
+
+4. Resistivity is temperature dependent and varies based on material
+   p = p0[1 + a(T-T0)]
+   p  -> caluculated resistivity
+   p0 -> set reference resistivity
+   a  -> temperature coefficient of resistivity (1/Celscius)
+   T0 -> Set reference temperature
+   T  -> target temperature
+
+The resisitivity of most metals increases with temperature because
+thermal energy causes atomic vibration which reduces the drift
+velocity of conducting electrons.
+
+
+
+
+
+
