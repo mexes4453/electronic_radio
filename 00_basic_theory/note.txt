@@ -80,5 +80,92 @@ Ph : Power as heat (W)
 
 
 
++----------+
+| CIRCUITS |
++----------+
+Circuit is any arrangement of electronic components with a voltage source which drives
+current within it.
+They are classified as basic, series and parallel circuit.
+A circuit can be a combination of both series and parallel arrangement.
+         |  SERIES |  PARALLEL  | 
+---------+---------+------------
+Current  | same    |   divided  |
+Voltage  | divided |   same     |
+
+
++----------+
+| RESISTOR |
++----------+
+Device that limit current flow or set voltage level in a circuit. They obey ohm's law.
+V=IR; I=V/R; R=V/I (ohms law)
+P=IV; P=IIR; P=VV/R (power loss)
+Parallel : 2 resistors -> Rt = (R1xR2)/(R1+R2)
+Seires   : 2 resistors -> Rt = R1+R2
+
+CURRENT DIVIDER = Io = Ii x R1/(R1+R2) for R1
+CURRENT DIVIDER = Io = Ii x R2/(R1+R2) for R2
+VOLTAGE DIVIDER = Vo = Vi x R1/(R1+R2) for R1
+VOLTAGE DIVIDER = Vo = Vi x R2/(R1+R2) for R2
+
+VOLTAGE DIVIDER DESIGN p62
+----------------------
+10 Percent Rule:
+Select bleeder Resistance (R2) and Current (I2).
+To select R1 & R2, select the R2 so that current I2 is 10% of total desired load current
+to minimise unnecessary power loss.
+- Compute for R2, I1 and lastly R1
+- Select Standard Resistor value for R1.
+- Select Standard Resistor value for 5% of R2 value.
+- Recompute the I2 after selection.
+
+MULTIPLE VOLTAGE DIVIDER
+10 Percent Rule:
+Select bleeder Resistance (Rn) and Current (In).
+Select the Rn so that current In is 10% of total desired load current
+use Kirchoff current law to compute In-1
+determine the voltage drop for accross Loadn-1
+compute Rn-1.
+Repeat until R1 is computed.
+
+
+- 
+NOTE
+----
+Loads powered by voltage dividers may experience a change in voltage due to the 
+following reason
++ Load resistance may suddenly change,
++ Supply voltage may vary
+** Voltage divider is not recommended for application that require steady voltage Supply
+** Voltage regulator (IC) is recommended for such case.
+
+Voltage source always have a resistor in series to it.
+Current source always have a resistor in parallel (shunt) to it.
+
+
+BATTERY
+-------
++ It is a dc source that provides constant voltage but reduces over time due to load.
++ It can be connected in parallel and in series in circuits.
+SERIES
+Final voltage is sum of all battery voltage
+Drains quicker.
+PARALLEL
+Final voltage is same as one of the batterys (all battery should be of same voltage)
+last longer.
+
+
+SHORT CIRCUITS
++ causes excessive current flow
++ caused by wire-crossing, insulation failure, solder splatter linking conductors
+-    in a circuit board.
++ Leads to component overheating, burning, open circuit.
++ Protection: Fuse, circuit breaker.
+-             They placed in circuits at the end of all load leading back to voltage
+-             source
+
+
+OPEN CIRCUITS
++ Break in the circuit.
++ caused by wire seperation from component maybe due to burn out (fuse)
 
 
