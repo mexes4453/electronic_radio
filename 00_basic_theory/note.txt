@@ -162,10 +162,14 @@ SHORT CIRCUITS
 + Protection: Fuse, circuit breaker.
 -             They placed in circuits at the end of all load leading back to voltage
 -             source
++ resistance = 0 ohms
++ current = infinity amps or limited by the power supply internal resistance.
 
 
 OPEN CIRCUITS
 + Break in the circuit.
 + caused by wire seperation from component maybe due to burn out (fuse)
++ resistance = infinity ohms
++ current = 0 amps
 
 
