@@ -389,6 +389,8 @@ is measured from the 0v reference point.
 - axis between the North and South poles of Magnets.
 
 + DC powered oscillator circuit with inductor and capacitor by resonance.
+- if the current is always positive in respect to zero, then it is pulsating DC
+- if the current intermittently reaches zero, then it is referred to as intermittent DC
 
 V = Vo * Sin (theta); 
 dtheta/time = w (omega) = 2pi*f = angular velocity;
@@ -400,3 +402,141 @@ V = dö/dt = N* A*Bwsin(wt) = induced voltage.
 I = V/R =  N * (ABw/R) * sin(wt) = induced current.
 
 
++++ NOTE +++
+------------
++ It is possible to combine two waveform and get a resultant waveform.
++ Other waveforms exist
+- -> Squarewave : |-|_|- (digital electronics),
+- -> Ramp       : /|/|/| (timiing circuits),
+- -> triangle   : /\/\/\ (timing circuits)
+
++ Function generators are device that generates variety of waveforms with varying
+- amplitudes and frequencies.
+
++++ WAVEFORM DESCRIPTION - p85 +++
+----------------------------------
+V(t) = Vp * sin (2pi * f * t);  f = 1/T
+
++ Vp = amplitude: The maximum positive peak voltage or current of a wave at 90degree.
+-                 sin 90 = 1.
+
++ f = frequency: The number of times per sec that the current or voltage reaches the
+-                positive peak in one second. (unit -> Hertz)
+
++ T = period: unit in seconds. Time to complete one wave cycle.
++ Phase are used to compare current and voltage of two waveforms with the same 
+-    frequency. It is measured in degrees. Therefore, one waveform can lead or
+-    lag another by a certain degree (45).
+-    Adding two sine waves of same frequencies produces a composite sine wave with
+-    same frequency which may vary in magnitude and phase.
+
++++ OHMS LAW AND POWER LAW IN AC CIRCUIT +++
+--------------------------------------------
+Alternating Voltage applied across a resistor will result in alternating current
+through the resistor that is in phase with voltage.
+
++ Current : I(t) = V(t)/R = (Vp /R) * sin (2pi * f * t)
++ Power   : P(t) = V(t)^2/R = (Vp^2 /R) * (sin (2pi * f * t))^2
+The instantanous computation is not really useful as it is limited by time, Hence
+the need for the root mean square computation of each circuit entity for analysis.
+
++ The average ac power equivalent to a corresponding average dc is half the  peak ac 
+- power.
+- Paverage = Ppeak * 0.5 = (average dc power equivalent of ac waveform)
+
++ Vrms = Vp/ sqrt(2) = 0.707 x Vp; Vp = Vrms * 1.414 
++ Irms = Ip/ sqrt(2) = 0.707 x Ip; Ip = Irms * 1.414 
+
++ AC power supply (60Hz, 120VAC in US) is Vrms = 170 * sin(2pi * 60 * t); Vp = 170V
++ Therefore all expression with sin computation can be replaced with their root mean
+- square counter part.
+
+Vrms = Irms * R;                                 AC ohms law
+P = Irms x Vrms = (Vrms)^2 / R = (Irms)^2 * R    AC power law
+!!! NOTE !!!
+------------
++ The expressions in this subsection applies only to purely resistive ac circuits.
+
+CONVERSION FACTOR
+FROM             TO              FACTOR (MULTIPLY BY)
+------------------------------------------------
++ Peak           Peak-to-peak     2
+| Peak-to-peak   Peak             0.5
+| Peak           RMS              (1/sqrt(2)) or 0.7071
+| RMS            Peak             sqrt(2) or 1.4142
+| Peak-to-peak   RMS              (0.5/sqrt(2)) or 0.35355
+| RMS            Peak-to-peak     (2*sqrt(2)) or 2.828
+| Peak           Average          (2/pi) or 0.6366
+| Average        Peak             (pi/2) or 1.5708
+| RMS            Average          (2*sqrt(2))/pi or 0.9003
+| Average        RMS              pi/(2*sqrt(2)) or 1.1107
++------------------------------------------------------------
+|* average is done over half a cycle. 
+| -> Perform AC circuit calculations using rms only for purely resistive circuit
+
+
++------------------+
+| CAPACITORS - p94 |
++------------------+
+Two parallel plates oppositely charged and seperated by an insulator (air, ceramics)
++ Apply voltage across the plates and observe that electron flows from the negative
+- battery terminal to one of the plates and electrons are driven away from the other
+- plate to the positive terminal of the battery leave on positive charges on it. at
+- the same time, an electric field is created between the plate and a voltage which
+- equals that of the battery.
+
++ The built up plate charges are lost by shorting them with a conductive wire which
+- creates a path for the electrons to flow to the positive plate. Thus neutralising
+- the system
+
+I = CdV/dt;  V = (1/C) * integral(Idt);   C = Q/V; Q=CV
+C: Capacitance (Farad)
+Q: Charge on + plate (Coulombs)
+I: Displacement current (amp)
+V: Voltage across capacitor
+
++ Therefore, capacitor are electronic device that store charge (electric energy in 
+- the form of electric field). 
++ They allow for control of storage and delivery of charge within a circuit.
+
++++ GAUSS LAW +++
+-----------------
+Electric field, E = V/d : voltage across the plate divided by the plate distance apart
+Q = eAE = eAV/d;
+Q (Coulombs) : charge on each plate (same but opposite)
+A (m2)       : plate surface area
+d (m)        : plate seperation distance.
+e (C^2/(N.m^2)) : permittivity of dielectric. for vacuum (e0 = 8.85x10e⁻12)
+
+from equation above 
+C (Farad) : capacitance = eA/d; 
+K (no unit): relative permittivity = e/e0 (dielectric constant) see p.99
+C = k(e0)A/d = (8.85*10e-12 x K x A)/d
+
+for capacitors with multiple number of plates 
+C = k(e0)A(n-1)/d = (8.85*10e-12 x K x A) x (n-1)/d; n = number of plates
+
++++ Important parameter from manufacturer +++
+---------------------------------------------
++ It is unsafe to connect capacitors directl across ac power line.
++ The peak value of the ac voltage should not be exceeded.
++ dcwv = DC withstanding voltage of capacitor. 
+
++++ MAXWELL DISPLACEMENT CURRENT +++
+------------------------------------
+Maxwell discovered that current could appear to flow from one plate to the other due 
+to electric flux (Ö = EA) created between the plates which permeates the empty space
+through the plates and induces current flow.
+I = dQ/dt = d(e0*AE)/dt = e0 * dÖ/dt;  (Ö = EA)
+I = d(CV)/dt = C(dV/dt)
+I = CdV/dt;  V = (1/C) * integral(Idt);   C = Q/V; Q=CV
+p.103: Real capacitor behaviour
+
++++ ENERGY IN CAPACITOR +++
+---------------------------
+Capacitor stores energy using the power law 
+P = IV = V * Idt = V * CdV/dt = 0.5 * C * V^2
+
++++ RC TIME CONSTANT +++
+------------------------
+I = (V/R) * e^(-t/RC) -> (t/RC) = -In(IR/V)
