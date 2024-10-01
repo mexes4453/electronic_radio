@@ -418,4 +418,11 @@ tau = RC (time constant)
 
 DISCHARGING
 -----------
+I  -> current in amps;
+Vs -> source voltage in volts;
+C  -> capacitance
+t  -> time in seconds;
+e  -> 2.718
+Vr -> resistor Voltage in Volts;
+
 /// mod_v1 ///
