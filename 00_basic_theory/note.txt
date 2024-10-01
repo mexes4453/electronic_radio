@@ -405,6 +405,7 @@ V = dö/dt = N* A*Bwsin(wt) = induced voltage.
 I = V/R =  N * (ABw/R) * sin(wt) = induced current.
 
 
+<<<<<<< HEAD
 +++ NOTE +++
 ------------
 + It is possible to combine two waveform and get a resultant waveform.
@@ -543,3 +544,27 @@ P = IV = V * Idt = V * CdV/dt = 0.5 * C * V^2
 +++ RC TIME CONSTANT +++
 ------------------------
 I = (V/R) * e^(-t/RC) -> (t/RC) = -In(IR/V)
+
+
+CHARGING & DISCHARGING CAPACITOR p135(105)
+------------------------------------------
+Capacitor can charge up and discharge almost instantaneously. This charge rate is 
+controlled by resistance in capacitor or external resistor in circuit.
+This feature is useful to create timer for ICs.
+
+CHARGING
+--------
+I  = (Vs/R) * e^(-t/RC)   -> (t/RC)=-ln(IR/Vs)
+Vr = IR = Vs * e^(-t/RC)  -> (t/RC)=-ln(Vr/Vs)
+Vc = (1/C) * integral(I * dt) = Vs(1 - e^(-t/RC)) -> (t/RC)=-ln((Vs-Vc)/Vs)
+tau = RC (time constant)
+
+DISCHARGING
+-----------
+I  -> current in amps;
+Vs -> source voltage in volts;
+C  -> capacitance
+t  -> time in seconds;
+e  -> 2.718
+Vr -> resistor Voltage in Volts;
+
