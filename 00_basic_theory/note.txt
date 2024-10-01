@@ -400,3 +400,22 @@ V = dö/dt = N* A*Bwsin(wt) = induced voltage.
 I = V/R =  N * (ABw/R) * sin(wt) = induced current.
 
 
+
+
+/// mod_v1 ///
+CHARGING & DISCHARGING CAPACITOR p135(105)
+------------------------------------------
+Capacitor can charge up and discharge almost instantaneously. This charge rate is 
+controlled by resistance in capacitor or external resistor in circuit.
+This feature is useful to create timer for ICs.
+
+CHARGING
+--------
+I  = (Vs/R) * e^(-t/RC)   -> (t/RC)=-ln(IR/Vs)
+Vr = IR = Vs * e^(-t/RC)  -> (t/RC)=-ln(Vr/Vs)
+Vc = (1/C) * integral(I * dt) = Vs(1 - e^(-t/RC)) -> (t/RC)=-ln((Vs-Vc)/Vs)
+tau = RC (time constant)
+
+DISCHARGING
+-----------
+/// mod_v1 ///
