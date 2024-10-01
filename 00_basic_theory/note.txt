@@ -214,6 +214,9 @@ A *-------- -|.|.|. + --------* B  (for battery)
 current direction (I) ----->
 dVab =(Vb-Va) = +IR 
 
+
+
+
 <------ loop trace direction
 A *-------- -|.|.|. + --------* B  (for battery)
 current direction (I) ----->
