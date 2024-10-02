@@ -558,6 +558,11 @@ I  = (Vs/R) * e^(-t/RC)   -> (t/RC)=-ln(IR/Vs)
 Vr = IR = Vs * e^(-t/RC)  -> (t/RC)=-ln(Vr/Vs)
 Vc = (1/C) * integral(I * dt) = Vs(1 - e^(-t/RC)) -> (t/RC)=-ln((Vs-Vc)/Vs)
 tau = RC (time constant)
+V(t) = 0.632 * Vs (@ 1 time constant (RC)  = tau)
+V(t) = 0.865 * Vs (@ 2 time constant (2*RC)= 2tau)
+V(t) = 0.95  * Vs (@ 3 time constant (3*RC)= 3tau)
+V(t) = 0.992 * Vs (@ 5 time constant (5*RC)= 5tau) -> fully charged capacitor
+2*tau = 2RC (time constant)
 
 DISCHARGING
 -----------
