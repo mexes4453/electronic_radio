@@ -566,6 +566,13 @@ V(t) = 0.992 * Vs (@ 5 time constant (5*RC)= 5tau) -> fully charged capacitor
 
 DISCHARGING
 -----------
+I  = (Vs/R) * e^(-t/RC)   -> (t/RC)=-ln(IR/Vs)
+Vr = IR = Vs * e^(-t/RC)  -> (t/RC)=-ln(Vr/Vs)
+Vc = (1/C) * integral(I * dt) = Vs * e^(-t/RC) -> (t/RC)=-ln(Vc/Vs)
+Note:
+After 1 time constant the capacitor voltages drops by 63.2%.
+After 5 time constant, the capacitor is considered fully discharged.
+--
 I  -> current in amps;
 Vs -> source voltage in volts;
 C  -> capacitance
@@ -573,3 +580,11 @@ t  -> time in seconds;
 e  -> 2.718
 Vr -> resistor Voltage in Volts;
 
+CAPACITOR IN PARALLEL -> Similar to resistors in series and vice-versa
+Ctot = C1 + C2 + ... + Cn
+Itot = I1 + I2 + ... + In
+I = C1(dV/dt) + C2(dV/dt) + C3(dV/dt) = (C1 + C2 + C3) dV/dt
+
+CAPACITOR IN SERIES   -> Similar to resistors in parallel and vice-versa
+1/Ctot = 1/C1 + 1/C2 + ... + 1/Cn
+V = (1/C1)integral(Idt) + ... + (1/Cn)integral(Idt) + = (1/C1 + ... 1/Cn)integral(Idt)
