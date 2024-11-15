@@ -1,7 +1,17 @@
 +++ LINKS +++ 
 Books -> https://ia902905.us.archive.org/30/items/practical-electronics-for-inventors-4th-edition-by-paul-scherz-simon-monk-z-lib.org/Practical%20Electronics%20for%20Inventors%2C%204th%20Edition%20by%20Paul%20Scherz%2C%20Simon%20Monk%20%28z-lib.org%29.pdf
 
-
+TOPICS
++ Radio
++ Antenna
++ Filters
++ Amplifiers
++ Capacitors
++ Inductors
++ Transistors
++ OpsAmps
++ resistors
++ AC/DC
 
 
 
