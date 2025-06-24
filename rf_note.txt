@@ -93,3 +93,8 @@ CWNE (expert)   - David Coman
 
 
 https://www.youtube.com/watch?v=XZhAg4oJ-WE&list=PLpdKaoNaDwSJkEMY21w2N2SO12CkGoY71&index=5
+
+---------------
+ANALOG CIRCUITS
+---------------
+https://digilent.com/reference/learn/courses/real-analog-chapter-1/start
