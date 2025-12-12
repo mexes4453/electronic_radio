@@ -1,0 +1,360 @@
+The art of electronics - paul horowitz and winfield hill
+Energy = power/time (Watt/sec)
+
+components active : transistors, operator amplifers.
+components passive : x
+
+===============
+voltage divider 
+===============
+
+Vout =   R2
+----   -----
+Vin    R1+R2
+
+===============
+voltage source
+===============
+a perfect voltage source is like a black box with two terminals which ensures that the voltage drop
+- across its terminals does not change (remains fixed).
++ In reality every voltage source has a small resistance in series but must maintain a maximum
+- current regardless (I = V/R)
++ a voltage source likes an open-circuit load but hates a short-circuit load.
++ example: battery.
+
+
+===============
+current  source
+===============
+a perfect current source is like a black box with two terminals which ensures that there is 
+constant current maintain through the external circuit connected to it regardless of the load
+(resistance) or voltage applied.
++ For this to be achieved, it must be able to supply any necessary voltage accross its terminal.
++ In reality, there is a limit to the amount of voltage they can provide in order for it to 
+- a constant current supply.
++ a current sources likes a short-circuit load and hates an open-circuit load.
+
+
+===========================
+thevenin/norton equivalent circuit
+===========================
+any complex network of resistors and voltage sources is similar to a single resistor in series
+with a single voltage source. - thevenin
++ the single voltage is called thevenin voltage (Vth) - open circuit at load terminal
++ the single resistance is called thevenin resistance (Rth) - short circuit across voltage sources.
+
+
+any complex network of resistors and current sources is similar to a single resistor in parallel
+with a single current source. - norton
+
+
+
+                 o    load     o
+                 |             |
+               - - - - - - - - - -
+       r1        |      r2     |
+       10k       |      10k    |
+  +----\/\/------+-----\/\/----+
+  |                            |
+  |                            |
+  |                            |
+  +------------+|I|I-----------+
+                30v
+
+
+
+thevenin voltage 
+================
+    Vth  =    r2
+    ---    -------
+    Vin    r1 + r2
+
+    vth = (10/(10+10)) * 30 = 15V 
+
+thevenin resistance
+===================
+assumes that there is a short across all voltage sources, then the circuit is reduced to 
+two resistors in parallel and then we find their equivalence.
+
+Rth = r1 * r2    
+      -------
+      r1 + r2
+
+Rth = (10 * 10) / (10 + 10) = 5kOhms.
+
+The new equivalent thevenin circuit for the above voltage divider circuit is as shown below
+with the single resistor and single voltage connected in series.
+
+
+               o  load  o
+               |        |
+               - - - - - - 
+               |        |
+   Rth (5k)    |        |
+  +----\/\/----+        |
+  |                     |
+  |                     |
+  |                     |
+  +---+|I|I-------------+
+    Vth(15v)
+
+
++ The load resistance should be far greater than the internal resistance of the voltage supply.
+- (Rload >> Rinternal)
+- this is required to avoid significant drop in the output voltage. (low attenuating effect)
++ To minimize the attenuation of a signal source below its open-circuit voltage, keep the load
+- resistance large compared with the output resistance.
+
++ power transfer is maximum when the source resitance equals load resistance.
++ note that the source resistance is same as the thevenin resistance.
+
+
+
+============
+zener diodes 
+============
+this device is used to create a constant voltage inside a circuit somewhere by providing them with
+a current derived fro a higher voltage within the circuit.
+
+=======
+signals
+=======
+these are voltages that change in time in a particular way
+
+sinusodal signals
+=================
+eqn1:  v= Asin2TTftV
+       A = amplitude
+       TT = 3.142
+       f = frequency (hertz)
+       t = time.
+
+eqn2:  v= Asin(2TTft + ö )
+       ö = phase
+
+eqn3:  v= Asin(wt)
+       w = angular frequency(radians/sec). = 2TTf
+
+it is standard practice to describe the circuit behaviour by its frequency response.
+a linear circuit driven by a sinewave will always respond with a sinewave, although the phase and
+- amplitude are changed.
+
+amplitude (pp) peak to peak : twice the amplitude. (2a)
+ -               - -
+   \           /   |
+    \         /    | a
+--------------------
+      \     /      | a
+       \   /       |
+         .         -
+
+amplitude (rms) root mean square (a/(2^(0.5))) = (0.707a);
+
+example: the power outlet in USA is 120volts rms (170volts amplitude), (339volts peak to peak)
+
+
+relative signal amplitude
++ two signals are compared (power and amplitude) relatively by using decibel
+eqn1 : dB = 10 * log10 (p2/p1)
+       + p = power 
+
+eqn2 : dB = 20 * log10 (a2/a1)
+       + a = amplitude 
+
+
+ramp signals p.49
+============
+it is a signal type where the voltage rises at a constant rate.
+This can go on forever, therefore it is usually limited (finite time) or periodic. the periodic ramp 
+are called sawtooth.
+
+forever    finite     periodic (sawtooth)
+|  /        |  ____   |  .  .  .
+| /         | /       | /| /| /|
+|/          |/        |/ |/ |/ |
++---        +-----    +------------ 
+
+triangle signals p.49
+================
+it is similar to ramp except that it is a symmetrical ramp
+|  .           .
+| / \         / \
+|/   \       /   \
++-----+-----+--------- 
+       \   /
+        \ /
+         +
+
+
+
+noise signals p.49
+=============
+
+square signal
+=============
+The signal has its peak and rms amplitude (voltage) to be the same.
+
+|   +----+    +----+
+|   |    |    |    |
+|   |    |    |    |
++---*----*----*----*---- 
+|        |    |    |
+|        |    |    |
+|        +----+    +-----
+
+Note:
++ In reality, the edges are not perfectly squared as shown. therefore it is important to compute
+- the rise time (tr) or fall time. 
++ The rise time is the amount of time it takes for a signal to rise from 10% to 90% of its total
+- transition. 
+
+
+pulse signal
+============
+this signal type is defined by amplitude and pulse width. they can be generated periodically, 
+therefore defined by frequency, or pulse repitiion rate or duty cycle.
+duty cycle: the ratio of pulse width to the repetition period. (0 - 100%)
+pulse signal can be positive or negative.
+
+|   +--+     +--+
+|   |  |     |  |
+| __|  |_____|  |___
++---------------------------------
+|                      --  --
+|                       |  | 
+|                       +--+
+
+=======================
+steps and spike signals
+=======================
+This signal type provides a way to describe what happens in a circuit.
+the step function is a part of a square wave.
+the spike is a jump of vanishingly short duration.
+
+step             spike
+|   +--+     |     |
+|   |        |     |
+| __|        | ____|___
++--------    +----------
+|            |  
+
+
+==============
+signal sources
+==============
+this comes in 3 types like signal generators, pulse generators and function generators.
+
+signal generators:
+-----------------
+this type of signal source are sinewave oscillators equipped to give a wide range of frequency coverage
+with provision to control the amplitude (using attenuators). Therefore, the allow for amplitude and
+frequency modulation (sweep generator, synthesizers). 
++ Ideal for testing circuits with varying frequency properties (tuned circuits or filters)
++ most signal generator uses a frequency synthesizer as the signal source.
+
+
+pulse generators:
+-----------------
+they generate pulses with various setable configuration like its repitition rate and pulse width.
+
+
+function generators:
+-------------------
+These are the most flexible signal source as they are capable of producing sine, triangle and 
+square wave over wide frequency range with controlled amplitude and dc offset 
++ Note that a dc offset is a constant dc voltage added to the signal.
+
+==============
+1.4 capacitors
+==============
+this is a passive linear device.
++ It is used for waveform generation, filtering, blocking and bypass application.
++ It is used for differentiation and integration.
++ it is a device with a pair of metal plates seperated by some insulating materials.
++ it is sometimes called a frequency dependent resistor which can be used to make 
+--  frequency dependent voltage divider (bypass, coupling)
+
++ it voltage and current are 90degree out of phase.
+
++ it stores charges (q) on both plates with opposite magnitude
+q = cv 
+q : amount of charge 
+v : voltage across the capacitor 
+c : 8.85x10e-14 x eA/d F
+    + e: dielectric constant of the insulator.
+    + A: area of the plates
+    + d: distance between the plates.
+
+i = c x dV = -V
+        --   ---
+        dt    R
+i = current through the capacitor 
+c = capacitance of the capacitor 
+dv = voltage change due to current flow over time. 
+dt = change in time.
+: This equation implies that the current is only proportional to the rate of change of 
++ voltage over time.
+
+
+u = 0.5 x cv^2
+u : energy in joules 
+c : capacitance of the capacitor 
+v = voltage across the capacitor
+
+coupling - pg.52
+---------------------------
+a capacitor looks like an open circuit in dc.
+a blocking capacitor is also known as a coupling capacitor because it couple a varying
+signal while blocking its average dc level.
+
+                    +-----------+
+                    |           |
+  +--------||------------o      |
+  |                 |           |
+  v                 |   load    |
+  |                 |   circuit |
+  |                 |           |
+  +----------------------o      |
+                    |           |
+                    +-----------+
+
+bypass - pg.52
+----------------
+a capacitor looks like a short circuit in high frequency( no time for it to charge up)
+it suppresses (bypass) signals where you do not want them by redirecting them to ground.
+At high frequency, the voltage changes very quickly, so the capacitor doesn’t have time to fully
+charge.
+Instead, it keeps passing the changing current easily—almost like a wire (a short circuit)
+therefore, redirecting the high frequency signal away from the circuit where they are not
+desired to ground. Hence, the name decoupling or bypass capacitor. 
+
+                    +-----------+
+                    |           |
+  +---------+------------o      |
+  |         |       |           |
+  v        ---      |   load    |
+  |        ---      |   circuit |
+  |         |       |           |
+  +---------+------------o      |
+                    |           |
+                    +-----------+
+
+capacitor in parallel 
+-----------------------
+This is combined to appear like one big mighty capacitor.
+
+     +---------+---------+
+     |         |         |
+    ---       ---       ---
+ c1 ---    c2 ---    c3 ---
+     |         |         |
+     +---------+---------+
+
+c_total x V = q_total = q1   + q2   + q3   +...
+                      = c1.V + c2.V + c3.V + ...
+                      = (c1 + c2 + c3 + ...) x V
+c_total = (c1 + c2 + c3 + ...)
+
+This appears to be the opposite of resistors in series.
+
+pg.54
